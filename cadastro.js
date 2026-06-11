@@ -1,3 +1,11 @@
+console.log("cadastro.js carregou");
+
+// Firebase App
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+
+
 // Firebase App
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
@@ -8,15 +16,21 @@ import {
   updateProfile
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-// Configuração Firebase
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "SEU_ID",
-  appId: "SEU_APP_ID"
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
+  authDomain: "deus-fiel-7a2cc.firebaseapp.com",
+  projectId: "deus-fiel-7a2cc",
+  storageBucket: "deus-fiel-7a2cc.firebasestorage.app",
+  messagingSenderId: "746071893459",
+  appId: "1:746071893459:web:c7a31b6e8ad49709187b26"
 };
+
+
+
+
+  
+
 
 // Iniciar Firebase
 const app = initializeApp(firebaseConfig);
