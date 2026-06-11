@@ -3,12 +3,6 @@ console.log("cadastro.js carregou");
 // Firebase App
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-
-
-
-// Firebase App
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
 // Firebase Auth
 import {
   getAuth,
@@ -16,8 +10,8 @@ import {
   updateProfile
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-
-  const firebaseConfig = {
+// Configuração Firebase
+const firebaseConfig = {
   apiKey: "AIzaSyAdirRN9nHaekNUjM3upyPTSBRVollrlMI",
   authDomain: "deus-fiel-7a2cc.firebaseapp.com",
   projectId: "deus-fiel-7a2cc",
@@ -26,39 +20,26 @@ import {
   appId: "1:746071893459:web:c7a31b6e8ad49709187b26"
 };
 
-
-
-
-  
-
-
 // Iniciar Firebase
 const app = initializeApp(firebaseConfig);
 
-// Auth
+// Authentication
 const auth = getAuth(app);
 
 // Criar Conta
-document.getElementById("btnCadastrar")
-.addEventListener("click", async () => {
+document.getElementById("btnCadastrar").addEventListener("click", async () => {
 
   try {
 
-    const nome =
-      document.getElementById("nome").value;
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
-    const email =
-      document.getElementById("email").value;
-
-    const senha =
-      document.getElementById("senha").value;
-
-    const usuario =
-      await createUserWithEmailAndPassword(
-        auth,
-        email,
-        senha
-      );
+    const usuario = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      senha
+    );
 
     await updateProfile(usuario.user, {
       displayName: nome
@@ -72,6 +53,8 @@ document.getElementById("btnCadastrar")
     }, 1500);
 
   } catch (erro) {
+
+    console.error(erro);
 
     document.getElementById("statusAuth").innerText =
       erro.message;
