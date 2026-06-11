@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho</title>
 
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+    background:white;
+    min-height:100vh;
+    padding:20px;
+    position:relative;
+}
+
+.topo{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.titulo{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.produto{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    padding:12px;
+    border-radius:14px;
+    margin-bottom:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.produto img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    margin-right:12px;
+}
+
+.info{
+    flex:1;
+}
+
+.nome{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.preco{
+    color:#555;
+}
+
+.qtd{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.qtd button{
+    width:30px;
+    height:30px;
+    border:none;
+    border-radius:50%;
+    background:#f0f0f0;
+    font-size:18px;
+}
+
+.obs{
+    margin:25px 0;
+    color:#555;
+}
+
+.resumo{
+    margin-top:15px;
+}
+
+.linha{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    color:#555;
+}
+
+.total{
+    font-size:26px;
+    font-weight:bold;
+    color:#000;
+}
+
+.pagamento{
+    margin-top:30px;
+}
+
+.pagamento h3{
+    margin-bottom:12px;
+}
+
+.opcoes{
+    display:flex;
+    gap:10px;
+}
+
+.opcao{
+    flex:1;
+    border:1px solid #ddd;
+    padding:14px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.ativa{
+    border:2px solid #16a34a;
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.finalizar{
+    width:100%;
+    margin-top:25px;
+    padding:16px;
+    border:none;
+    border-radius:25px;
+    background:#16a34a;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.menu{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    max-width:390px;
+    background:white;
+    border-top:1px solid #eee;
+    display:flex;
+    justify-content:space-around;
+    padding:12px 0;
+}
+
+.menu div{
+    font-size:12px;
+    text-align:center;
+}
+
+.ativo{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="topo">
+    <span>←</span>
+    <div class="titulo">Carrinho</div>
+    <span>🗑️</span>
+</div>
+
+<div class="produto">
+    <img src="https://via.placeholder.com/55">
+    <div class="info">
+        <div class="nome">Arroz 5kg</div>
+        <div class="preco">R$ 23,90</div>
+    </div>
+    <div class="qtd">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+</div>
+
+<div class="produto">
+    <img src="https://via.placeholder.com/55">
+    <div class="info">
+        <div class="nome">Feijão Carioca 1kg</div>
+        <div class="preco">R$ 8,90</div>
+    </div>
+    <div class="qtd">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+</div>
+
+<div class="produto">
+    <img src="https://via.placeholder.com/55">
+    <div class="info">
+        <div class="nome">Leite Integral 1L</div>
+        <div class="preco">R$ 6,49</div>
+    </div>
+    <div class="qtd">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+    </div>
+</div>
+
+<div class="obs">
+    ✏️ Adicionar observação
+</div>
+
+<div class="resumo">
+
+    <div class="linha">
+        <span>Subtotal</span>
+        <span>R$ 39,29</span>
+    </div>
+
+    <div class="linha">
+        <span>Desconto</span>
+        <span>- R$ 0,00</span>
+    </div>
+
+    <div class="linha total">
+        <span>Total</span>
+        <span>R$ 39,29</span>
+    </div>
+
+</div>
+
+<div class="pagamento">
+
+<h3>Forma de pagamento</h3>
+
+<div class="opcoes">
+    <div class="opcao ativa">💵 Dinheiro</div>
+    <div class="opcao">💳 Cartão</div>
+</div>
+
+<button class="finalizar">
+    FINALIZAR COMPRA
+</button>
+
+</div>
+
+</div>
+
+<div class="menu">
+    <div>🏠<br>Home</div>
+    <div>📦<br>Produtos</div>
+    <div class="ativo">🛒<br>Compras</div>
+    <div>💰<br>Financeiro</div>
+    <div>⋯<br>Mais</div>
+</div>
+
+</body>
+</html>
