@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contas Fixas</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+    background:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+h1{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:#f0f0f0;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    margin-top:5px;
+}
+
+.total{
+    font-size:18px;
+    font-weight:bold;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💰 Contas Fixas</h1>
+
+<div class="card">
+    <p>💧 Água</p>
+    <input type="number" id="agua" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p>⚡ Luz</p>
+    <input type="number" id="luz" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p>🌐 Internet</p>
+    <input type="number" id="internet" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p🏠> Aluguel</p>
+    <input type="number" id="aluguel" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p>🏢 Condomínio</p>
+    <input type="number" id="condominio" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p>🍔 Alimentação</p>
+    <input type="number" id="alimentacao" placeholder="Valor">
+</div>
+
+<div class="card">
+    <p>➕ Outras entradas</p>
+    <input type="number" id="outros" placeholder="Valor">
+</div>
+
+<button onclick="calcular()">Calcular total</button>
+
+<div class="total">
+    Total de gastos: R$ <span id="total">0</span>
+</div>
+
+</div>
+
+<script>
+function calcular(){
+
+    let agua = Number(document.getElementById("agua").value || 0);
+    let luz = Number(document.getElementById("luz").value || 0);
+    let internet = Number(document.getElementById("internet").value || 0);
+    let aluguel = Number(document.getElementById("aluguel").value || 0);
+    let condominio = Number(document.getElementById("condominio").value || 0);
+    let alimentacao = Number(document.getElementById("alimentacao").value || 0);
+    let outros = Number(document.getElementById("outros").value || 0);
+
+    let total = agua + luz + internet + aluguel + condominio + alimentacao + outros;
+
+    document.getElementById("total").innerText = total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
