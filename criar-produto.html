@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Produto</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+}
+
+.container{
+    width:100%;
+    max-width:390px;
+    background:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-bottom:10px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#16a34a;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏪 Criar Produto</h2>
+
+<input id="nome" placeholder="Nome do produto">
+<input id="preco" type="number" placeholder="Preço">
+<input id="imagem" placeholder="URL da imagem">
+<input id="codigo" placeholder="Código de barras">
+
+<button onclick="salvar()">Salvar produto</button>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "SUA_API_KEY",
+  projectId: "SEU_PROJECT_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.salvar = async function(){
+
+    const nome = document.getElementById("nome").value;
+    const preco = document.getElementById("preco").value;
+    const imagem = document.getElementById("imagem").value;
+    const codigo = document.getElementById("codigo").value;
+
+    await addDoc(collection(db, "produtos"), {
+        nome,
+        preco: Number(preco),
+        imagem,
+        codigo
+    });
+
+    alert("Produto criado!");
+}
+</script>
+
+</body>
+</html>
