@@ -15,8 +15,6 @@ body{
 .container{
     max-width:390px;
     margin:auto;
-    background:white;
-    min-height:100vh;
     padding:20px;
 }
 
@@ -27,29 +25,38 @@ body{
 }
 
 .card{
-    background:#f8f8f8;
+    background:white;
+    border-radius:15px;
     padding:15px;
-    border-radius:12px;
     margin-bottom:15px;
-    box-shadow:0 2px 5px rgba(0,0,0,.1);
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .valor{
-    font-size:22px;
+    font-size:24px;
     font-weight:bold;
     color:#16a34a;
 }
 
-.botao{
+.barra{
     width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
+    height:20px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progresso{
+    height:100%;
+    width:40%;
     background:#16a34a;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    margin-top:10px;
+}
+
+.ia{
+    background:#ecfdf5;
+    border-left:4px solid #16a34a;
+    padding:10px;
+    border-radius:10px;
 }
 </style>
 </head>
@@ -57,31 +64,60 @@ body{
 
 <div class="container">
 
-<div class="titulo">📊 Relatórios</div>
+<div class="titulo">📊 Relatório Financeiro</div>
 
 <div class="card">
-    <h3>💰 Total de Vendas</h3>
-    <div class="valor">R$ 0,00</div>
+    <h3>💰 Entradas</h3>
+    <div class="valor">R$ 4.000</div>
 </div>
 
 <div class="card">
-    <h3>🛒 Total de Compras</h3>
-    <div class="valor">0</div>
+    <h3>💸 Despesas</h3>
+    <div class="valor">R$ 2.430</div>
 </div>
 
 <div class="card">
-    <h3>📦 Produtos Cadastrados</h3>
-    <div class="valor">0</div>
+    <h3>💵 Saldo Livre</h3>
+    <div class="valor">R$ 1.570</div>
 </div>
 
 <div class="card">
-    <h3>👥 Clientes Cadastrados</h3>
-    <div class="valor">0</div>
+    <h3>📈 Investimentos</h3>
+    <div class="valor">R$ 1.570</div>
 </div>
 
-<button class="botao">
-    📥 Exportar Relatório
-</button>
+<div class="card">
+    <h3>🎯 Meta Financeira</h3>
+
+    <p>Meta: R$ 10.000</p>
+
+    <div class="barra">
+        <div class="progresso"></div>
+    </div>
+
+    <p>40% concluído</p>
+</div>
+
+<div class="card">
+    <h3>🏠 Resumo das Despesas</h3>
+
+    <p>💧 Água: R$ 80</p>
+    <p>⚡ Luz: R$ 150</p>
+    <p>🌐 Internet: R$ 100</p>
+    <p>🏠 Aluguel: R$ 1.000</p>
+    <p>🍛 Alimentação: R$ 800</p>
+    <p>🎮 Lazer: R$ 300</p>
+</div>
+
+<div class="card">
+    <h3>🤖 Assistente Financeiro</h3>
+
+    <div class="ia">
+        Você investiu 39% da sua renda.
+        Mantendo esse ritmo poderá acumular
+        mais patrimônio ao longo dos próximos meses.
+    </div>
+</div>
 
 </div>
 
